@@ -1,23 +1,25 @@
 import React from 'react'
 
 import Cell from '../components/Cell'
+import Model from '../model/Model'
 
 class Main extends React.Component {
 
   constructor() {
     super()
     this.handleCellClicked = this.handleCellClicked.bind( this )
+    this.model = new Model()
     this.state = {
-      grid: [
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""]
-      ]
+      grid: this.model.grid
     }
   }
 
   handleCellClicked( row, col ) {
     console.log( "cell clicked: row:", row, " col:", col );
+    this.model.movePlayed( row, col )
+    this.setState({
+      grid: this.model.grid
+    })
   }
 
   render() {
