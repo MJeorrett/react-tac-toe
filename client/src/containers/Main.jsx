@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Cell from '../components/Cell'
+import CurrentPlayer from '../components/CurrentPlayer'
 import Model from '../model/Model'
 
 class Main extends React.Component {
@@ -10,15 +11,20 @@ class Main extends React.Component {
     this.handleCellClicked = this.handleCellClicked.bind( this )
     this.model = new Model()
     this.state = {
-      grid: this.model.grid
+      grid: this.model.grid,
+      currentPlayerSymbol: this.model.currentPlayer,
+      winner: undefined
     }
   }
 
   handleCellClicked( row, col ) {
     console.log( "cell clicked: row:", row, " col:", col );
     this.model.movePlayed( row, col )
+    const winner = this.model.winner()
     this.setState({
-      grid: this.model.grid
+      grid: this.model.grid,
+      currentPlayerSymbol: this.model.currentPlayer,
+      winner: winner
     })
   }
 
@@ -43,6 +49,10 @@ class Main extends React.Component {
 
     return(
       <div id="main-container">
+        <CurrentPlayer
+          playerSymbol={ this.state.currentPlayerSymbol }
+          winner={ this.state.winner }
+        />
         { grid }
       </div>
     )

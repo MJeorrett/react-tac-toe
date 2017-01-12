@@ -1,12 +1,21 @@
+* {
+  color: dodgerblue;
+  font-family: monospace;
+}
+
 #app-container {
   align-items: center;
 }
 
 h1 {
-  font-family: monospace;
   font-size: 40px;
-  color: dodgerblue;
   /*text-align: center;*/
+}
+
+#current-player {
+  text-align: center;
+  font-size: 18px;
+  color: white;
 }
 
 #main-container {
