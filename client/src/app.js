@@ -5,7 +5,7 @@ import Main from './containers/Main';
 
 window.onload = function(){
   ReactDOM.render(
-    <div>
+    <div id="app-container">
       <h1>React Tac Toe</h1>
       <Main />
     </div>,

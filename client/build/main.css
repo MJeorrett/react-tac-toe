@@ -1,57 +1,31 @@
-body{
-  font-family: Verdana;
+#app-container {
+  align-items: center;
 }
 
-.counter-box, .comment-box{
-  border: 2px solid mediumaquamarine;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 5px auto;
-  width: 400px;
-  font-size: 20px;
-  text-align: center;
+h1 {
+  font-family: monospace;
+  font-size: 40px;
+  color: dodgerblue;
+  /*text-align: center;*/
 }
 
-button{
-  padding: 10px;
-  width: 150px;
-  border-radius: 10px;
-  font-size: 20px;
-  background-color: tomato;
+#main-container {
+  background-color: dodgerblue;
+  display: inline-block;
+  border: 10px solid dodgerblue;
+  margin: 0px auto;
 }
 
-button:hover{
-  background-color: mediumaquamarine;
+.cell {
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 0px;
+  margin: 10px;
+  background-color: #DEF;
 }
 
-.comment{
-  border-bottom: 1px solid mediumaquamarine;
-  padding: 10px;
-}
-
-.comment-form{
-  margin: 0 auto;
-  width: 70%;
-}
-
-.comment-form input{
-  display: block;
-  margin: 20px 0;
-  padding: 10px;
-  width: 100%;
-}
-
-.comment-form input[type=submit]{
-  width: 100%;
-  padding: 10px;
-  margin 20px auto;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  background-color: mediumaquamarine;
-  border-radius: 5px;
-}
-
-.countries-box{
-  
+.cell:hover {
+  background-color: #ACD;
+  cursor: pointer;
 }
