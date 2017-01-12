@@ -23,6 +23,7 @@ h1 {
   border-radius: 0px;
   margin: 10px;
   background-color: #DEF;
+  font-size: 40px;
 }
 
 .cell:hover {

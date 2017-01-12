@@ -5,11 +5,13 @@ class Game {
       [".", ".", "."],
       [".", ".", "."]
     ]
-    this.currentPlayer = 1;
+    this.currentPlayer = "X";
   }
 
   movePlayed( row, col ) {
-    this.grid[row][col] = "X";
+    this.grid[row][col] = this.currentPlayer;
+    const currentIsCrosses = this.currentPlayer === "X"
+    this.currentPlayer = currentIsCrosses ? "O" : "X"
   }
 }
 
