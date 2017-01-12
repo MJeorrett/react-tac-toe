@@ -4,8 +4,23 @@ import Cell from '../components/Cell'
 
 class Main extends React.Component {
 
-  render() {
+  constructor() {
+    super()
+    this.handleCellClicked = this.handleCellClicked.bind( this )
+    this.state = {
+      grid: [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+      ]
+    }
+  }
 
+  handleCellClicked( row, col ) {
+    console.log( "cell clicked: row:", row, " col:", col );
+  }
+
+  render() {
     var grid = []
 
     for( var row = 0; row < 3; row++ ) {
@@ -14,6 +29,10 @@ class Main extends React.Component {
         rowCells.push(
           <Cell
             key={ [row, col].toString() }
+            row={ row }
+            col={ col }
+            contents={ this.state.grid[row][col] }
+            clickCallback={ this.handleCellClicked }
           />
         )
       }
